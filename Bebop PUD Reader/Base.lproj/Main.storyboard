@@ -128,13 +128,56 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Bebop_PUD_Reader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="751" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <box autoresizesSubviews="NO" title="Box" boxType="custom" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="5MY-8F-N43">
+                                <rect key="frame" x="0.0" y="25" width="251" height="245"/>
+                                <view key="contentView">
+                                    <rect key="frame" x="1" y="1" width="249" height="243"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="borderColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                <color key="fillColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </box>
+                            <box autoresizesSubviews="NO" title="Box" boxType="custom" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="WXe-CV-8DY">
+                                <rect key="frame" x="250" y="25" width="251" height="245"/>
+                                <view key="contentView">
+                                    <rect key="frame" x="1" y="1" width="249" height="243"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="borderColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                <color key="fillColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </box>
+                            <box autoresizesSubviews="NO" title="Box" boxType="custom" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="RIi-eX-awF">
+                                <rect key="frame" x="500" y="25" width="251" height="245"/>
+                                <view key="contentView">
+                                    <rect key="frame" x="1" y="1" width="249" height="243"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="borderColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                <color key="fillColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </box>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="5MY-8F-N43" secondAttribute="bottom" constant="25" id="3mc-8f-7H1"/>
+                            <constraint firstItem="WXe-CV-8DY" firstAttribute="top" secondItem="RIi-eX-awF" secondAttribute="top" id="5Tt-uC-pzy"/>
+                            <constraint firstItem="5MY-8F-N43" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="69i-cF-425"/>
+                            <constraint firstItem="WXe-CV-8DY" firstAttribute="leading" secondItem="5MY-8F-N43" secondAttribute="trailing" constant="-1" id="7aV-Lq-kmC"/>
+                            <constraint firstItem="WXe-CV-8DY" firstAttribute="bottom" secondItem="5MY-8F-N43" secondAttribute="bottom" id="9mM-jZ-pOV"/>
+                            <constraint firstItem="WXe-CV-8DY" firstAttribute="width" secondItem="RIi-eX-awF" secondAttribute="width" id="9oh-HF-I7l"/>
+                            <constraint firstItem="RIi-eX-awF" firstAttribute="leading" secondItem="WXe-CV-8DY" secondAttribute="trailing" constant="-1" id="F0t-Lc-dx9"/>
+                            <constraint firstItem="WXe-CV-8DY" firstAttribute="width" secondItem="5MY-8F-N43" secondAttribute="width" id="FtT-MC-YnR"/>
+                            <constraint firstAttribute="trailing" secondItem="RIi-eX-awF" secondAttribute="trailing" id="MpS-ge-svq"/>
+                            <constraint firstItem="WXe-CV-8DY" firstAttribute="top" secondItem="5MY-8F-N43" secondAttribute="top" id="TTb-6d-mQK"/>
+                            <constraint firstItem="WXe-CV-8DY" firstAttribute="bottom" secondItem="RIi-eX-awF" secondAttribute="bottom" id="ZpH-uN-Gtk"/>
+                            <constraint firstItem="5MY-8F-N43" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="c3y-KR-KC8"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="74.5" y="655"/>
         </scene>
     </scenes>
 </document>
