@@ -1,0 +1,412 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AD584D111A95424900CB129A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD584D101A95424900CB129A /* AppDelegate.swift */; };
+		AD584D131A95424900CB129A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD584D121A95424900CB129A /* ViewController.swift */; };
+		AD584D151A95424900CB129A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD584D141A95424900CB129A /* Images.xcassets */; };
+		AD584D181A95424900CB129A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD584D161A95424900CB129A /* Main.storyboard */; };
+		AD584D241A95424900CB129A /* Bebop_PUD_ReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD584D231A95424900CB129A /* Bebop_PUD_ReaderTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AD584D1E1A95424900CB129A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD584D031A95424900CB129A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD584D0A1A95424900CB129A;
+			remoteInfo = "Bebop PUD Reader";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AD584D0B1A95424900CB129A /* Bebop PUD Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bebop PUD Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD584D0F1A95424900CB129A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD584D101A95424900CB129A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AD584D121A95424900CB129A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AD584D141A95424900CB129A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AD584D171A95424900CB129A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AD584D1D1A95424900CB129A /* Bebop PUD ReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bebop PUD ReaderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD584D221A95424900CB129A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD584D231A95424900CB129A /* Bebop_PUD_ReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bebop_PUD_ReaderTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD584D081A95424900CB129A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD584D1A1A95424900CB129A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AD584D021A95424900CB129A = {
+			isa = PBXGroup;
+			children = (
+				AD584D0D1A95424900CB129A /* Bebop PUD Reader */,
+				AD584D201A95424900CB129A /* Bebop PUD ReaderTests */,
+				AD584D0C1A95424900CB129A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AD584D0C1A95424900CB129A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD584D0B1A95424900CB129A /* Bebop PUD Reader.app */,
+				AD584D1D1A95424900CB129A /* Bebop PUD ReaderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD584D0D1A95424900CB129A /* Bebop PUD Reader */ = {
+			isa = PBXGroup;
+			children = (
+				AD584D101A95424900CB129A /* AppDelegate.swift */,
+				AD584D121A95424900CB129A /* ViewController.swift */,
+				AD584D141A95424900CB129A /* Images.xcassets */,
+				AD584D161A95424900CB129A /* Main.storyboard */,
+				AD584D0E1A95424900CB129A /* Supporting Files */,
+			);
+			path = "Bebop PUD Reader";
+			sourceTree = "<group>";
+		};
+		AD584D0E1A95424900CB129A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AD584D0F1A95424900CB129A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AD584D201A95424900CB129A /* Bebop PUD ReaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD584D231A95424900CB129A /* Bebop_PUD_ReaderTests.swift */,
+				AD584D211A95424900CB129A /* Supporting Files */,
+			);
+			path = "Bebop PUD ReaderTests";
+			sourceTree = "<group>";
+		};
+		AD584D211A95424900CB129A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AD584D221A95424900CB129A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD584D0A1A95424900CB129A /* Bebop PUD Reader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD584D271A95424900CB129A /* Build configuration list for PBXNativeTarget "Bebop PUD Reader" */;
+			buildPhases = (
+				AD584D071A95424900CB129A /* Sources */,
+				AD584D081A95424900CB129A /* Frameworks */,
+				AD584D091A95424900CB129A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bebop PUD Reader";
+			productName = "Bebop PUD Reader";
+			productReference = AD584D0B1A95424900CB129A /* Bebop PUD Reader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AD584D1C1A95424900CB129A /* Bebop PUD ReaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD584D2A1A95424900CB129A /* Build configuration list for PBXNativeTarget "Bebop PUD ReaderTests" */;
+			buildPhases = (
+				AD584D191A95424900CB129A /* Sources */,
+				AD584D1A1A95424900CB129A /* Frameworks */,
+				AD584D1B1A95424900CB129A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD584D1F1A95424900CB129A /* PBXTargetDependency */,
+			);
+			name = "Bebop PUD ReaderTests";
+			productName = "Bebop PUD ReaderTests";
+			productReference = AD584D1D1A95424900CB129A /* Bebop PUD ReaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AD584D031A95424900CB129A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Martin ROGER";
+				TargetAttributes = {
+					AD584D0A1A95424900CB129A = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					AD584D1C1A95424900CB129A = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = AD584D0A1A95424900CB129A;
+					};
+				};
+			};
+			buildConfigurationList = AD584D061A95424900CB129A /* Build configuration list for PBXProject "Bebop PUD Reader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AD584D021A95424900CB129A;
+			productRefGroup = AD584D0C1A95424900CB129A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD584D0A1A95424900CB129A /* Bebop PUD Reader */,
+				AD584D1C1A95424900CB129A /* Bebop PUD ReaderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AD584D091A95424900CB129A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD584D151A95424900CB129A /* Images.xcassets in Resources */,
+				AD584D181A95424900CB129A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD584D1B1A95424900CB129A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD584D071A95424900CB129A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD584D131A95424900CB129A /* ViewController.swift in Sources */,
+				AD584D111A95424900CB129A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD584D191A95424900CB129A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD584D241A95424900CB129A /* Bebop_PUD_ReaderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AD584D1F1A95424900CB129A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD584D0A1A95424900CB129A /* Bebop PUD Reader */;
+			targetProxy = AD584D1E1A95424900CB129A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AD584D161A95424900CB129A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD584D171A95424900CB129A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AD584D251A95424900CB129A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AD584D261A95424900CB129A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		AD584D281A95424900CB129A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Bebop PUD Reader/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AD584D291A95424900CB129A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Bebop PUD Reader/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AD584D2B1A95424900CB129A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Bebop PUD ReaderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bebop PUD Reader.app/Contents/MacOS/Bebop PUD Reader";
+			};
+			name = Debug;
+		};
+		AD584D2C1A95424900CB129A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Bebop PUD ReaderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bebop PUD Reader.app/Contents/MacOS/Bebop PUD Reader";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD584D061A95424900CB129A /* Build configuration list for PBXProject "Bebop PUD Reader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD584D251A95424900CB129A /* Debug */,
+				AD584D261A95424900CB129A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD584D271A95424900CB129A /* Build configuration list for PBXNativeTarget "Bebop PUD Reader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD584D281A95424900CB129A /* Debug */,
+				AD584D291A95424900CB129A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AD584D2A1A95424900CB129A /* Build configuration list for PBXNativeTarget "Bebop PUD ReaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD584D2B1A95424900CB129A /* Debug */,
+				AD584D2C1A95424900CB129A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AD584D031A95424900CB129A /* Project object */;
+}
