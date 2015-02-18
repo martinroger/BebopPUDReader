@@ -12,6 +12,8 @@
 		AD584D151A95424900CB129A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD584D141A95424900CB129A /* Images.xcassets */; };
 		AD584D181A95424900CB129A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD584D161A95424900CB129A /* Main.storyboard */; };
 		AD584D241A95424900CB129A /* Bebop_PUD_ReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD584D231A95424900CB129A /* Bebop_PUD_ReaderTests.swift */; };
+		AD584D2E1A95426100CB129A /* BinaryRAW.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD584D2D1A95426100CB129A /* BinaryRAW.swift */; };
+		AD584D301A95428100CB129A /* DataLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD584D2F1A95428100CB129A /* DataLine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 		AD584D1D1A95424900CB129A /* Bebop PUD ReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bebop PUD ReaderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD584D221A95424900CB129A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD584D231A95424900CB129A /* Bebop_PUD_ReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bebop_PUD_ReaderTests.swift; sourceTree = "<group>"; };
+		AD584D2D1A95426100CB129A /* BinaryRAW.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BinaryRAW.swift; path = ../BinaryRAW.swift; sourceTree = "<group>"; };
+		AD584D2F1A95428100CB129A /* DataLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataLine.swift; path = ../DataLine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				AD584D101A95424900CB129A /* AppDelegate.swift */,
+				AD584D2D1A95426100CB129A /* BinaryRAW.swift */,
+				AD584D2F1A95428100CB129A /* DataLine.swift */,
 				AD584D121A95424900CB129A /* ViewController.swift */,
 				AD584D141A95424900CB129A /* Images.xcassets */,
 				AD584D161A95424900CB129A /* Main.storyboard */,
@@ -208,8 +214,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD584D2E1A95426100CB129A /* BinaryRAW.swift in Sources */,
 				AD584D131A95424900CB129A /* ViewController.swift in Sources */,
 				AD584D111A95424900CB129A /* AppDelegate.swift in Sources */,
+				AD584D301A95428100CB129A /* DataLine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
