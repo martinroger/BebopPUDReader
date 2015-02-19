@@ -34,11 +34,15 @@ class ViewController: NSViewController {
     }
 
     @IBAction func loadPUDFilePressed(sender: NSButton) {
-        var rawData = binaryRAW() //This is where all the data will be handled in raw form
-        
+        var rawData = binaryRAW()
         self.currentStatus.stringValue = "Opening PUD File"
         rawData.binaryRaw = self.openPUDFile()
+        //println("File Opened")
+        //println(rawData.binaryRaw.length)
         rawData.scindRawData(rawData.findEndOfJSON())
+        //println("File cut")
+        //println(rawData.jsonData.length)
+        //println(rawData.flightData.length)
         self.currentStatus.stringValue = "JSON end found"
         jsonUsefulInfos = self.extractUsefulJSONData(rawData.jsonData)
         self.currentStatus.stringValue = "JSON header parsed"
@@ -50,21 +54,34 @@ class ViewController: NSViewController {
         self.currentStatus.stringValue = "Ready to save"
     }
     @IBAction func saveKMLFilePressed(sender: NSButton) {
+        self.currentStatus.stringValue = "KML file saving not yet implemented"
     }
     @IBAction func saveCSVFilePressed(sender: NSButton) {
         self.currentStatus.stringValue = "Saving..."
         saveCSVFile()
-        self.currentStatus.stringValue = "CSV File Saved"
+        self.currentStatus.stringValue = "CSV file saved"
     }
 
     func updateDisplay() {
+        self.flightDateToDisplay.stringValue = jsonUsefulInfos["date"]!
+        self.serialNumberToDisplay.stringValue = jsonUsefulInfos["serialnumber"]!
+        self.uuidToDisplay.stringValue = jsonUsefulInfos["uuid"]!
         
     }
     
     func openPUDFile() -> NSData {
         var raw = NSData()
-        //This should contain the NSOpenPanel sequence
+        var openFileDialog: NSOpenPanel = NSOpenPanel()
+        openFileDialog.allowsMultipleSelection = false
+        openFileDialog.canChooseDirectories = false
+        openFileDialog.runModal()
+        var chosenFile = openFileDialog.URL
         
+        if chosenFile != nil
+        {
+            raw = NSData(contentsOfURL: chosenFile!)!
+        }
+
         return raw
     }
     
@@ -74,8 +91,18 @@ class ViewController: NSViewController {
     
     func extractUsefulJSONData(JSONData: NSData) -> [ String : String ] {
         var infos = [ String : String ]()
-        //somewhere in here use NSJSONSerialization
-        
+        let jsonObject: AnyObject! = NSJSONSerialization.JSONObjectWithData(JSONData, options: NSJSONReadingOptions.MutableContainers, error: nil)
+        if let JSONDict = jsonObject as? NSDictionary {
+            if let date = JSONDict["date"] as? NSString {
+                infos["date"] = date
+            }
+            if let serialnumber = JSONDict["serial_number"] as? NSString {
+                infos["serialnumber"] = serialnumber
+            }
+            if let uuid = JSONDict["uuid"] as? NSString {
+                infos["uuid"] = uuid
+            }
+        }
         return infos
     }
     
