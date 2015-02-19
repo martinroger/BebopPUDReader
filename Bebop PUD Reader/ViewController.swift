@@ -37,5 +37,17 @@ class ViewController: NSViewController {
     @IBAction func saveCSVFilePressed(sender: NSButton) {
     }
 
+    func updateDisplay() {
+        
+    }
+    
+    func openPUDFile() {
+        
+    }
+    
+    func saveCSVFile() {
+        
+    }
+    
 }
 
