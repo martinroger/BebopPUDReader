@@ -109,7 +109,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Bebop PUD Reader" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -358,13 +358,19 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="smallSystem"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="loadPUDFilePressed:" target="XfG-lQ-9wD" id="FQp-Fq-ivz"/>
+                                </connections>
                             </button>
                             <button horizontalHuggingPriority="900" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Fgm-PU-lrH" userLabel="Save KML file">
                                 <rect key="frame" x="415" y="39" width="87" height="17"/>
-                                <buttonCell key="cell" type="roundRect" title="Save KML file" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5cB-Ja-nIG">
+                                <buttonCell key="cell" type="roundRect" title="Save KML file" bezelStyle="roundedRect" alignment="center" controlSize="small" enabled="NO" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5cB-Ja-nIG">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="smallSystem"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="saveKMLFilePressed:" target="XfG-lQ-9wD" id="KGi-u1-Dh9"/>
+                                </connections>
                             </button>
                             <button horizontalHuggingPriority="900" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Sf7-yN-Iak" userLabel="Save CSV file">
                                 <rect key="frame" x="415" y="71" width="87" height="17"/>
@@ -372,6 +378,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="smallSystem"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="saveCSVFilePressed:" target="XfG-lQ-9wD" id="B9R-Ya-E3B"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -417,7 +426,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="currentStatus" destination="tlu-Rq-KZj" id="JRE-Fl-0Z6"/>
                         <outlet property="flightDateToDisplay" destination="8Qe-oB-kI7" id="tj0-FP-XJ4"/>
+                        <outlet property="flightDurationToDisplay" destination="DGW-hf-IDh" id="w5y-zg-dlg"/>
+                        <outlet property="maxHeightToDisplay" destination="MvS-8E-cj5" id="dti-Fh-6RJ"/>
+                        <outlet property="maxSpeedToDisplay" destination="CjP-cg-xPX" id="LAG-JW-uYz"/>
+                        <outlet property="serialNumberToDisplay" destination="eQD-dG-j6w" id="B2w-dw-q3C"/>
+                        <outlet property="uuidToDisplay" destination="AYo-So-xYX" id="NGR-CI-UOR"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
