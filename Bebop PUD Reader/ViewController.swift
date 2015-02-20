@@ -65,9 +65,24 @@ class ViewController: NSViewController {
     }
     
     @IBAction func saveCSVFilePressed(sender: NSButton) {
-        self.currentStatus.stringValue = "Saving..."
-        saveCSVFile()
-        self.currentStatus.stringValue = "CSV file saved"
+        var resultStringToWrite = String()
+        var headerStringToWrite = "TimeStamp;Battery Level;Controller GPS Longitude;Controller GPS Latitude;Flying State;Alert State;Wifi Strength;Product GPS Available;Product GPS Longitude;Product GPS Latitude;Product GPS Position Error;Speed Vx;Speed Vy;Speed Vz;Angle Phi;Angle Theta;Angle Psi;Altitude;Flip Type\n"
+        if hashedData.isEmpty == false {
+            self.currentStatus.stringValue = "Saving..."
+            resultStringToWrite = headerStringToWrite + generateResultString(hashedData)
+            var saveFileDialog: NSSavePanel = NSSavePanel()
+            saveFileDialog.allowedFileTypes = [ "csv" ]
+            saveFileDialog.canCreateDirectories = true
+            saveFileDialog.beginWithCompletionHandler { (result) -> Void in
+                if result == NSFileHandlingPanelOKButton
+                {
+                    resultStringToWrite.writeToURL(saveFileDialog.URL!, atomically: true, encoding: NSUTF8StringEncoding, error: nil)
+                    
+                }
+            }
+
+            self.currentStatus.stringValue = "CSV file saved"
+        }
     }
 
     func updateDisplay(data: [ dataLine ]) {
@@ -106,9 +121,31 @@ class ViewController: NSViewController {
         return raw
     }
     
-    func saveCSVFile() {
+    func generateResultString(byteHashedData: [dataLine]) -> String {
         //Il va falloir faire une seule grosse String avec des \n et la writeToUrl et l'entête
-        
+        var result = String()
+        for tempDataLine in byteHashedData {
+            result = result + "\(tempDataLine.timeStamp)" + ";"
+            result = result + ("\(tempDataLine.batteryLevel)" + ";")
+            result = result + (String(format: "%f", tempDataLine.controllerGPSLongitude) + ";")
+            result = result + (String(format: "%f", tempDataLine.controllerGPSLatitude) + ";")
+            result = result + ("\(tempDataLine.flyingState)" + ";")
+            result = result + ("\(tempDataLine.alertState)" + ";")
+            result = result + ("\(tempDataLine.wifiStrength)" + ";")
+            result = result + ("\(tempDataLine.productGPSAvailable)" + ";")
+            result = result + (String(format: "%f", tempDataLine.productGPSLongitude) + ";")
+            result = result + (String(format: "%f", tempDataLine.productGPSLatitude) + ";")
+            result = result + ("\(tempDataLine.productGPSPositionError)" + ";")
+            result = result + (String(format: "%f", tempDataLine.speedVx) + ";")
+            result = result + (String(format: "%f", tempDataLine.speedVy) + ";")
+            result = result + (String(format: "%f", tempDataLine.speedVz) + ";")
+            result = result + (String(format: "%f", tempDataLine.anglePhi) + ";")
+            result = result + (String(format: "%f", tempDataLine.angleTheta) + ";")
+            result = result + (String(format: "%f", tempDataLine.anglePsi) + ";")
+            result = result + ("\(tempDataLine.altitude)" + ";")
+            result = result + ("\(tempDataLine.flipType)") + "\n"
+        }
+        return result
     }
     
     func extractUsefulJSONData(JSONData: NSData) -> [ NSString : NSString ] {
