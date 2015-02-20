@@ -11,8 +11,9 @@ import Cocoa
 class ViewController: NSViewController {
     
     var jsonUsefulInfos = [ NSString : NSString ]() //Dictionary linked to fun extractUsefulJSONData
-    var hashedData = [dataLine]()               //array of dataLines is final product that needs to be typecase to String for CSV
-
+    var hashedData = [dataLine]()//array of dataLines is final product that needs to be typecase to String for CSV
+    var rawData = binaryRAW()
+    
     @IBOutlet weak var currentStatus: NSTextField!
     @IBOutlet weak var flightDateToDisplay: NSTextField!
     @IBOutlet weak var serialNumberToDisplay: NSTextField!
@@ -34,30 +35,35 @@ class ViewController: NSViewController {
     }
 
     @IBAction func loadPUDFilePressed(sender: NSButton) {
-        var rawData = binaryRAW()
+
             self.currentStatus.stringValue = "Opening PUD File"
         rawData.binaryRaw = self.openPUDFile()
-        rawData.scindRawData(rawData.findEndOfJSON())
-            self.currentStatus.stringValue = "JSON end found"
-        jsonUsefulInfos = self.extractUsefulJSONData(rawData.jsonData)
-            self.currentStatus.stringValue = "JSON header parsed"
-        hashedData = parseRAWData(rawData.flightData)
-        /* uncomment to debug parsed values
-        var counter: Int = 0
-        for index in hashedData {
+        if rawData.binaryRaw.length != 0
+        {
+            rawData.scindRawData(rawData.findEndOfJSON())
+                self.currentStatus.stringValue = "JSON end found"
+            jsonUsefulInfos = self.extractUsefulJSONData(rawData.jsonData)
+                self.currentStatus.stringValue = "JSON header parsed"
+            hashedData = parseRAWData(rawData.flightData)
+            /* uncomment to debug parsed values
+            var counter: Int = 0
+            for index in hashedData {
             
-            println("\(counter)" + " " + "\(index.productGPSAvailable)")
-            counter++
-        }*/
-            self.currentStatus.stringValue = "RAW data parsed"
-        updateDisplay(hashedData)
-        self.currentStatus.stringValue = "Infos updated"
+                println("\(counter)" + " " + "\(index.productGPSAvailable)")
+                counter++
+            }*/
+                self.currentStatus.stringValue = "RAW data parsed"
+            updateDisplay(hashedData)
+            self.currentStatus.stringValue = "Infos updated"
         
-        self.currentStatus.stringValue = "Ready to save"
+            self.currentStatus.stringValue = "Ready to save"
+        }
     }
+    
     @IBAction func saveKMLFilePressed(sender: NSButton) {
         self.currentStatus.stringValue = "KML file saving not yet implemented"
     }
+    
     @IBAction func saveCSVFilePressed(sender: NSButton) {
         self.currentStatus.stringValue = "Saving..."
         saveCSVFile()
