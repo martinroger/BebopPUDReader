@@ -77,11 +77,12 @@ class ViewController: NSViewController {
                 if result == NSFileHandlingPanelOKButton
                 {
                     resultStringToWrite.writeToURL(saveFileDialog.URL!, atomically: true, encoding: NSUTF8StringEncoding, error: nil)
+                    self.currentStatus.stringValue = "CSV file saved"
                     
                 }
             }
 
-            self.currentStatus.stringValue = "CSV file saved"
+            
         }
     }
 
