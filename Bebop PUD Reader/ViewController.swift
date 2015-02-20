@@ -42,7 +42,12 @@ class ViewController: NSViewController {
         jsonUsefulInfos = self.extractUsefulJSONData(rawData.jsonData)
             self.currentStatus.stringValue = "JSON header parsed"
         hashedData = parseRAWData(rawData.flightData)
-        print(hashedData[0].altitude)
+        var counter: Int = 0
+        for index in hashedData {
+            
+            println("\(counter)" + " " + "\(index.altitude)")
+            counter++
+        }
             self.currentStatus.stringValue = "RAW data parsed"
         updateDisplay(hashedData)
         self.currentStatus.stringValue = "Infos updated"
@@ -63,7 +68,7 @@ class ViewController: NSViewController {
         self.serialNumberToDisplay.stringValue = jsonUsefulInfos["serialnumber"]!
         self.uuidToDisplay.stringValue = jsonUsefulInfos["uuid"]!
         
-        var maxHeight: Int = 0
+        var maxHeight: Int16 = 0
         var maxSpeed: Float = 0.0
         var flightDuration: Double = 0.0
         for index in data {
@@ -78,8 +83,6 @@ class ViewController: NSViewController {
         self.flightDurationToDisplay.stringValue = String(format: "%.2f", flightDuration) + " s"
         self.maxHeightToDisplay.stringValue = " \(maxHeight)" + " m"
         self.maxSpeedToDisplay.stringValue = String(format: "%.2f", maxSpeed) + "m/s"
-        
-        //reste la procédure de recherche de max à mettre à jour
     }
     
     func openPUDFile() -> NSData {
@@ -97,7 +100,7 @@ class ViewController: NSViewController {
     }
     
     func saveCSVFile() {
-        //Il va falloir faire une seule grosse String avec des \n et la writeToUrl
+        //Il va falloir faire une seule grosse String avec des \n et la writeToUrl et l'entête
         
     }
     
