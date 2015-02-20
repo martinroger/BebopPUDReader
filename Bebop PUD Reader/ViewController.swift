@@ -38,7 +38,7 @@ class ViewController: NSViewController {
 
             self.currentStatus.stringValue = "Opening PUD File"
         rawData.binaryRaw = self.openPUDFile()
-        if rawData.binaryRaw.length != 0
+        if rawData.binaryRaw.length != 0 //only proceed with operations if OK button has been pressed and data is not empty
         {
             rawData.scindRawData(rawData.findEndOfJSON())
                 self.currentStatus.stringValue = "JSON end found"
