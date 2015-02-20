@@ -36,7 +36,7 @@ class binaryRAW {
     
     func scindRawData(index: Int) {
         self.jsonData = self.binaryRaw.subdataWithRange(NSMakeRange(0, index))
-        self.flightData = self.binaryRaw.subdataWithRange(NSMakeRange(index , binaryRaw.length - index )) //gros doute
+        self.flightData = self.binaryRaw.subdataWithRange(NSMakeRange(index + 1 , binaryRaw.length - index - 1 )) //gros doute
     }
     
 }

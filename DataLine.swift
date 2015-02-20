@@ -8,7 +8,7 @@
 
 import Foundation
 
-class dataLine {
+struct dataLine {
     var timeStamp: Int = 0
     var batteryLevel: Int = 0
     var controllerGPSLongitute: Double = 0.0
@@ -28,9 +28,4 @@ class dataLine {
     var anglePsi: Float = 0.0
     var altitude: Int = 0
     var flipType: Int = 0
-    
-    init() {
-        
-    }
-    
 }
