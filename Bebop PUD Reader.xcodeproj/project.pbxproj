@@ -405,6 +405,7 @@
 				AD584D291A95424900CB129A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AD584D2A1A95424900CB129A /* Build configuration list for PBXNativeTarget "Bebop PUD ReaderTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +414,7 @@
 				AD584D2C1A95424900CB129A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
