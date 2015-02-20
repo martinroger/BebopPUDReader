@@ -143,7 +143,7 @@ class ViewController: NSViewController {
         {
             data.getBytes(&currentLine.timeStamp, range : NSMakeRange(byteIndex*77,4))
             data.getBytes(&currentLine.batteryLevel, range: NSMakeRange(byteIndex*77 + 4, 4))
-            data.getBytes(&currentLine.controllerGPSLongitute, range: NSMakeRange(byteIndex*77 + 8, 8))
+            data.getBytes(&currentLine.controllerGPSLongitude, range: NSMakeRange(byteIndex*77 + 8, 8))
             data.getBytes(&currentLine.controllerGPSLatitude, range: NSMakeRange(byteIndex*77 + 16, 8))
             data.getBytes(&currentLine.flyingState, range: NSMakeRange(byteIndex*77 + 24, 1))
             data.getBytes(&currentLine.alertState, range: NSMakeRange(byteIndex*77 + 25, 1))

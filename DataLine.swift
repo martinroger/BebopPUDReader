@@ -11,7 +11,7 @@ import Foundation
 struct dataLine {
     var timeStamp: Int = 0
     var batteryLevel: Int = 0
-    var controllerGPSLongitute: Double = 0.0
+    var controllerGPSLongitude: Double = 0.0
     var controllerGPSLatitude: Double = 0.0
     var flyingState: Int = 0
     var alertState: Int = 0
