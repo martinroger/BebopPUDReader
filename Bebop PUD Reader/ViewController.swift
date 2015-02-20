@@ -42,12 +42,13 @@ class ViewController: NSViewController {
         jsonUsefulInfos = self.extractUsefulJSONData(rawData.jsonData)
             self.currentStatus.stringValue = "JSON header parsed"
         hashedData = parseRAWData(rawData.flightData)
+        /* uncomment to debug parsed values
         var counter: Int = 0
         for index in hashedData {
             
-            println("\(counter)" + " " + "\(index.altitude)")
+            println("\(counter)" + " " + "\(index.productGPSAvailable)")
             counter++
-        }
+        }*/
             self.currentStatus.stringValue = "RAW data parsed"
         updateDisplay(hashedData)
         self.currentStatus.stringValue = "Infos updated"
@@ -68,7 +69,7 @@ class ViewController: NSViewController {
         self.serialNumberToDisplay.stringValue = jsonUsefulInfos["serialnumber"]!
         self.uuidToDisplay.stringValue = jsonUsefulInfos["uuid"]!
         
-        var maxHeight: Int16 = 0
+        var maxHeight: Int32 = 0
         var maxSpeed: Float = 0.0
         var flightDuration: Double = 0.0
         for index in data {
@@ -81,7 +82,7 @@ class ViewController: NSViewController {
         }
         flightDuration = (Double(data[data.count - 1].timeStamp)) / 1000.0
         self.flightDurationToDisplay.stringValue = String(format: "%.2f", flightDuration) + " s"
-        self.maxHeightToDisplay.stringValue = " \(maxHeight)" + " m"
+        self.maxHeightToDisplay.stringValue = String(format: "%.2f", Float(maxHeight)/1000.0) + " m"
         self.maxSpeedToDisplay.stringValue = String(format: "%.2f", maxSpeed) + "m/s"
     }
     

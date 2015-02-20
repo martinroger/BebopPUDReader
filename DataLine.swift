@@ -26,6 +26,6 @@ struct dataLine {
     var anglePhi: Float = 0.0
     var angleTheta: Float = 0.0
     var anglePsi: Float = 0.0
-    var altitude: Int16 = 0
+    var altitude: Int32 = 0
     var flipType: Int = 0
 }
