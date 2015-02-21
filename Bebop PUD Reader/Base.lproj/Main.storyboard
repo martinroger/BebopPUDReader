@@ -191,9 +191,9 @@
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </box>
                             <box autoresizesSubviews="NO" title="L2" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="aue-au-OlQ">
-                                <rect key="frame" x="2" y="62" width="306" height="33"/>
+                                <rect key="frame" x="2" y="63" width="306" height="32"/>
                                 <view key="contentView">
-                                    <rect key="frame" x="1" y="1" width="304" height="31"/>
+                                    <rect key="frame" x="1" y="1" width="304" height="30"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BhT-PC-HaL" userLabel="SerialNum">
@@ -224,9 +224,9 @@
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </box>
                             <box autoresizesSubviews="NO" title="L3" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Lmm-gd-dnB">
-                                <rect key="frame" x="2" y="31" width="306" height="32"/>
+                                <rect key="frame" x="2" y="31" width="306" height="33"/>
                                 <view key="contentView">
-                                    <rect key="frame" x="1" y="1" width="304" height="30"/>
+                                    <rect key="frame" x="1" y="1" width="304" height="31"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KbA-HO-MCZ" userLabel="UUID">
@@ -291,7 +291,7 @@
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </box>
                             <box autoresizesSubviews="NO" title="C2" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Ro5-gN-2qk">
-                                <rect key="frame" x="307" y="62" width="206" height="33"/>
+                                <rect key="frame" x="307" y="63" width="206" height="33"/>
                                 <view key="contentView">
                                     <rect key="frame" x="1" y="1" width="204" height="31"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -322,7 +322,7 @@
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </box>
                             <box autoresizesSubviews="NO" title="C3" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="chb-7s-UvX">
-                                <rect key="frame" x="307" y="30" width="206" height="33"/>
+                                <rect key="frame" x="307" y="31" width="206" height="33"/>
                                 <view key="contentView">
                                     <rect key="frame" x="1" y="1" width="204" height="31"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -364,7 +364,7 @@
                             </button>
                             <button horizontalHuggingPriority="900" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Fgm-PU-lrH" userLabel="Save KML file">
                                 <rect key="frame" x="515" y="39" width="87" height="17"/>
-                                <buttonCell key="cell" type="roundRect" title="Save KML file" bezelStyle="roundedRect" alignment="center" controlSize="small" enabled="NO" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5cB-Ja-nIG">
+                                <buttonCell key="cell" type="roundRect" title="Save KML file" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5cB-Ja-nIG">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="smallSystem"/>
                                 </buttonCell>

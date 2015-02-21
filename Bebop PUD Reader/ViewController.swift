@@ -45,13 +45,6 @@ class ViewController: NSViewController {
             jsonUsefulInfos = self.extractUsefulJSONData(rawData.jsonData)
                 self.currentStatus.stringValue = "JSON header parsed"
             hashedData = parseRAWData(rawData.flightData)
-            /* uncomment to debug parsed values
-            var counter: Int = 0
-            for index in hashedData {
-            
-                println("\(counter)" + " " + "\(index.productGPSAvailable)")
-                counter++
-            }*/
                 self.currentStatus.stringValue = "RAW data parsed"
             updateDisplay(hashedData)
             self.currentStatus.stringValue = "Infos updated"
@@ -61,28 +54,44 @@ class ViewController: NSViewController {
     }
     
     @IBAction func saveKMLFilePressed(sender: NSButton) {
-        self.currentStatus.stringValue = "KML file saving not yet implemented"
+        var resultStringToWrite = String()
+        var headerStringToWrite = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<kml xmlns=\"http://www.opengis.net/kml/2.2\" xmlns:gx=\"http://www.google.com/kml/ext/2.2\" xmlns:kml=\"http://www.opengis.net/kml/2.2\" xmlns:atom=\"http://www.w3.org/2005/Atom\">\n<Placemark>\n"
+        headerStringToWrite = headerStringToWrite + "\t<name>" + jsonUsefulInfos["date"]! + "</name>\n\t<Style id=\"default\">\n\t\t<LineStyle>\n\t\t\t<color>ff0000ff</color>\n\t\t\t<width>2</width>\n\t\t</LineStyle>\n\t</Style>\n\t<LineString>\n\t\t<tessellate>1</tessellate>\n\t\t<altitudeMode>relativeToGround</altitudeMode>\n\t\t<coordinates>\n"
+        var footerStringToWrite = "\t\t</coordinates>\n\t</LineString>\n</Placemark>\n</kml>"
+        if hashedData.isEmpty == false {
+            self.currentStatus.stringValue = "Saving KML..."
+            resultStringToWrite = headerStringToWrite + generateKMLResultString(hashedData) + footerStringToWrite
+            var saveFileDialog: NSSavePanel = NSSavePanel()
+            saveFileDialog.allowedFileTypes = [ "kml" ]
+            saveFileDialog.nameFieldStringValue = self.jsonUsefulInfos["filename"]!
+            saveFileDialog.canCreateDirectories = true
+            saveFileDialog.beginWithCompletionHandler { (result) -> Void in
+                if result == NSFileHandlingPanelOKButton
+                {
+                    resultStringToWrite.writeToURL(saveFileDialog.URL!, atomically: true, encoding: NSUTF8StringEncoding, error: nil)
+                    self.currentStatus.stringValue = "KML file saved"
+                }
+            }
+        }
     }
     
     @IBAction func saveCSVFilePressed(sender: NSButton) {
         var resultStringToWrite = String()
         var headerStringToWrite = "TimeStamp;Battery Level;Controller GPS Longitude;Controller GPS Latitude;Flying State;Alert State;Wifi Strength;Product GPS Available;Product GPS Longitude;Product GPS Latitude;Product GPS Position Error;Speed Vx;Speed Vy;Speed Vz;Angle Phi;Angle Theta;Angle Psi;Altitude;Flip Type\n"
         if hashedData.isEmpty == false {
-            self.currentStatus.stringValue = "Saving..."
-            resultStringToWrite = headerStringToWrite + generateResultString(hashedData)
+            self.currentStatus.stringValue = "Saving CSV..."
+            resultStringToWrite = headerStringToWrite + generateCSVResultString(hashedData)
             var saveFileDialog: NSSavePanel = NSSavePanel()
             saveFileDialog.allowedFileTypes = [ "csv" ]
+            saveFileDialog.nameFieldStringValue = self.jsonUsefulInfos["filename"]!
             saveFileDialog.canCreateDirectories = true
             saveFileDialog.beginWithCompletionHandler { (result) -> Void in
                 if result == NSFileHandlingPanelOKButton
                 {
                     resultStringToWrite.writeToURL(saveFileDialog.URL!, atomically: true, encoding: NSUTF8StringEncoding, error: nil)
                     self.currentStatus.stringValue = "CSV file saved"
-                    
                 }
             }
-
-            
         }
     }
 
@@ -104,7 +113,7 @@ class ViewController: NSViewController {
         }
         flightDuration = (Double(data[data.count - 1].timeStamp)) / 1000.0
         self.flightDurationToDisplay.stringValue = String(format: "%.2f", flightDuration) + " s"
-        self.maxHeightToDisplay.stringValue = String(format: "%.2f", Float(maxHeight)/1000.0) + " m"
+        self.maxHeightToDisplay.stringValue = String(format: "%.2f", Double(maxHeight)/1000.0) + " m"
         self.maxSpeedToDisplay.stringValue = String(format: "%.2f", maxSpeed) + "m/s"
     }
     
@@ -122,8 +131,20 @@ class ViewController: NSViewController {
         return raw
     }
     
-    func generateResultString(byteHashedData: [dataLine]) -> String {
-        //Il va falloir faire une seule grosse String avec des \n et la writeToUrl et l'entête
+    func generateKMLResultString(byteHashedData: [dataLine]) -> String {
+        var result = String()
+        for tempDataLine in byteHashedData {
+            if (tempDataLine.flyingState > 0 && tempDataLine.productGPSLatitude != 0.0 && tempDataLine.productGPSLongitude != 0.0 && tempDataLine.productGPSLatitude < 180.0 && tempDataLine.productGPSLongitude < 180.0) {
+                result = result + String(format: "%f", tempDataLine.productGPSLongitude) + ","
+                result = result + String(format: "%f", tempDataLine.productGPSLatitude) + ","
+                result = result + String(format: "%f", Double(tempDataLine.altitude)/1000.0 ) + " "
+            }
+        }
+        result = result + "\n"
+        return result
+    }
+    
+    func generateCSVResultString(byteHashedData: [dataLine]) -> String {
         var result = String()
         for tempDataLine in byteHashedData {
             result = result + "\(tempDataLine.timeStamp)" + ";"
@@ -169,6 +190,7 @@ class ViewController: NSViewController {
         readableDate = readableDate + originalDate.substringWithRange(NSMakeRange(11,2)) + "H" + originalDate.substringWithRange(NSMakeRange(13, 2)) + ":" + originalDate.substringWithRange(NSMakeRange(15, 2)) + " on "
         readableDate = readableDate + originalDate.substringWithRange(NSMakeRange(8, 2)) + "/" + originalDate.substringWithRange(NSMakeRange(5, 2)) + "/" + originalDate.substringWithRange(NSMakeRange(0,4))
         infos["date"] = readableDate
+        infos["filename"] = originalDate
         return infos
     }
     
